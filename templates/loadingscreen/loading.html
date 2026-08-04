@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading...</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/loading.css') }}">
+    
+    <style>
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #ffffff;
+      }
+    </style>
+</head>
+<body>
+
+    <!-- The Loader HTML Structure -->
+    <div class="loader">
+      <div class="text"><span>Loading</span></div>
+      <div class="text"><span>Loading</span></div>
+      <div class="text"><span>Loading</span></div>
+      <div class="text"><span>Loading</span></div>
+      <div class="text"><span>Loading</span></div>
+      <div class="text"><span>Loading</span></div>
+      <div class="text"><span>Loading</span></div>
+      <div class="text"><span>Loading</span></div>
+      <div class="text"><span>Loading</span></div>
+      <div class="line"></div>
+    </div>
+
+    <script>
+  setTimeout(function() {
+      // Directs the browser to @app.route('/signup') in your Python file
+      window.location.href = "{{ url_for('sign_up') }}";
+  }, 4000);
+</script>
+</body>
+
+</html>

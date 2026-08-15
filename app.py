@@ -14,12 +14,10 @@ def loadPage():
 
 @app.route('/signup')
 def signup():
-    return render_template('sign_up/sign_up.html')
+    return render_template('signup/signup.html')
 
 if __name__ == "__main__":
     app.run(debug=True)
-    
-   
 
 
 

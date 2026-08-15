@@ -1,0 +1,240 @@
+/* ==========================================================================
+   GLOBAL BODY & BACKGROUND
+   ========================================================================== */
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* Background setup (Handled via Flask inline or fallback relative path) */
+    background-image: url('images/signupbg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
+    font-family: monospace;
+}
+
+/* ==========================================================================
+   SEMI-TRANSPARENT FORM CONTAINER
+   ========================================================================== */
+.form-container {
+    /* Dark translucent overlay */
+    background: rgba(0, 0, 0, 0.75); 
+    
+    /* Glassmorphism blur effect */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    /* Brutalist box aesthetic */
+    padding: 55px 45px 25px 45px;
+    border-radius: 12px;
+    border: 4px solid #000000;
+    box-shadow: 8px 8px 0px #4a90e2, 14px 14px 0px #000000;
+
+    /* Layout sizing */
+    width: 100%;
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+/* ==========================================================================
+   BRUTALIST INPUT STYLES (From Uiverse.io by 0xnihilism)
+   ========================================================================== */
+.brutalist-container {
+    position: relative;
+    width: 100%; /* Spans full width inside .form-container */
+    margin-bottom: 38px;
+    font-family: monospace;
+}
+
+.brutalist-input {
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #000;
+    background-color: #fff;
+    border: 4px solid #000;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0;
+    outline: none;
+    box-sizing: border-box;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 5px 5px 0 #000, 10px 10px 0 #4a90e2;
+}
+
+.brutalist-label {
+    position: absolute;
+    left: -3px;
+    top: -35px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #000;
+    padding: 5px 10px;
+    transform: rotate(-1deg);
+    z-index: 1;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Focus and Animations */
+.brutalist-input:focus {
+    animation: focus-pulse 4s cubic-bezier(0.25, 0.8, 0.25, 1) infinite,
+               glitch 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) infinite;
+}
+
+.brutalist-input:focus + .brutalist-label {
+    transform: rotate(0deg) scale(1.05);
+    background-color: #4a90e2;
+}
+
+.brutalist-input::placeholder {
+    color: #888;
+    transition: color 0.3s ease;
+}
+
+.brutalist-input:focus::placeholder {
+    color: transparent;
+}
+
+/* Glitch & Pulse Keyframes */
+@keyframes glitch {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(-2px, -2px); }
+    60% { transform: translate(2px, 2px); }
+    80% { transform: translate(2px, -2px); }
+    100% { transform: translate(0); }
+}
+
+@keyframes focus-pulse {
+    0%, 100% { border-color: #000; }
+    50% { border-color: #4a90e2; }
+}
+
+.smooth-type {
+    position: relative;
+    overflow: hidden;
+}
+
+.smooth-type::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(90deg, #fff 0%, rgba(255, 255, 255, 0) 100%);
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.smooth-type:focus::before {
+    opacity: 1;
+    animation: type-gradient 2s linear infinite;
+}
+
+@keyframes type-gradient {
+    0% { background-position: 300px 0; }
+    100% { background-position: 0 0; }
+}
+
+/* ==========================================================================
+   3D BUTTON STYLES (From Uiverse.io by Z4drus)
+   ========================================================================== */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.button-3d {
+    -webkit-appearance: none;
+    appearance: none;
+    position: relative;
+    border-width: 0;
+    padding: 0 8px;
+    min-width: 4em;
+    min-height: 4em;
+    box-sizing: border-box;
+    background: transparent;
+    font: inherit;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+.button-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    padding: 8px 16px;
+    transform: translateY(0);
+    color: #fff;
+    background-image: linear-gradient(145deg, #6a11cb, #2575fc);
+    text-shadow: 0 -1px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    transition: transform 0.3s, border-radius 0.3s, background 10s;
+}
+
+.button-3d:active .button-top {
+    border-radius: 10px 10px 8px 8px / 8px;
+    transform: translateY(2px);
+    background-image: linear-gradient(145deg, #2575fc, #6a11cb);
+}
+
+.button-bottom {
+    position: absolute;
+    z-index: 1;
+    bottom: 4px;
+    left: 4px;
+    border-radius: 20px;
+    padding-top: 6px;
+    width: calc(100% - 8px);
+    height: calc(100% - 10px);
+    background-image: linear-gradient(145deg, #2575fc, #6a11cb);
+    box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.5);
+    transition: border-radius 0.2s, padding-top 0.2s;
+}
+
+.button-base {
+    position: absolute;
+    z-index: 0;
+    top: 4px;
+    left: 0;
+    border-radius: 20px;
+    width: 100%;
+    height: calc(100% - 4px);
+    background-color: rgba(0, 0, 0, 0.15);
+    box-shadow: 0 1px 1px 0 rgba(255, 255, 255, 0.75),
+                inset 0 2px 2px rgba(0, 0, 0, 0.25);
+    transition: border-radius 0.2s, padding-top 0.2s;
+}
+
+.button-3d:active .button-bottom {
+    border-radius: 10px 10px 8px 8px / 8px;
+    padding-top: 0;
+}
+
+.button-3d:active .button-base {
+    border-radius: 10px 10px 8px 8px / 8px;
+}
+
+.material-icons {
+    font-size: 16px;
+    font-weight: bold;
+    font-family: monospace;
+}

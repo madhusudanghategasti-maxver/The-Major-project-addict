@@ -6,3 +6,5 @@ matplotlib
 seaborn
 ipykernel
 gunicorn
+fastapi
+uvicorn

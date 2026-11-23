@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MindGuard - Home</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="home">
+  <nav class="navbar">
+    <a href="home.html" class="logo"><span class="badge">🧠</span> MindGuard</a>
+    <div class="nav-links">
+      <a href="home.html" class="active">Home</a>
+      <a href="tips.html">Wellness Tips</a>
+    </div>
+    <a href="predict.html" class="btn btn-primary">Get Started →</a>
+  </nav>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <h1>Take Control<br />of Your <span class="gradient-text">Digital Life.</span></h1>
+        <p>MindGuard helps you track smartphone addiction using AI and provides personalized tips for a healthier digital habit.</p>
+        <div class="hero-btns">
+          <a href="predict.html" class="btn btn-primary">Start Prediction →</a>
+          <button class="btn btn-outline" id="learnMore">Learn More</button>
+        </div>
+      </div>
+      <div class="hero-art">🧑‍💻🌿</div>
+    </section>
+
+    <section class="habit-section card" id="features">
+      <h2>Which habit sounds like you?</h2>
+      <p class="habit-sub">Tap one to see what MindGuard checks.</p>
+
+      <div class="habit-chips" id="habitChips">
+        <button class="habit-chip active" data-k="0">🌙 Late-night scrolling</button>
+        <button class="habit-chip" data-k="1">🔔 Constant notifications</button>
+        <button class="habit-chip" data-k="2">😴 Skipping sleep</button>
+        <button class="habit-chip" data-k="3">📱 Endless social feeds</button>
+      </div>
+
+      <div class="habit-result">
+        <div class="habit-box habit-check">
+          <span class="habit-label">🔍 What MindGuard checks</span>
+          <p id="habitCheck"></p>
+        </div>
+        <div class="habit-box habit-help">
+          <span class="habit-label">💡 What helps</span>
+          <p id="habitHelp"></p>
+        </div>
+      </div>
+
+      <a href="predict.html" class="btn btn-primary">Check my habits →</a>
+    </section>
+
+    <section class="how-row" id="how">
+      <div>
+        <h2>How It Works</h2>
+        <p class="how-sub">Just 4 simple steps to a healthier digital life.</p>
+        <div class="steps">
+          <div class="step"><div class="num">1</div>Enter Your<br />Data</div>
+          <span class="arrow">→</span>
+          <div class="step"><div class="num">2</div>Get Your<br />Result</div>
+          <span class="arrow">→</span>
+          <div class="step"><div class="num">3</div>Follow Tips</div>
+          <span class="arrow">→</span>
+          <div class="step"><div class="num">4</div>Live Better</div>
+        </div>
+      </div>
+      <div class="card motivate">🤍<br />Small steps today,<br />make a big difference tomorrow.</div>
+    </section>
+  </main>
+
+  <div class="modal" id="modal">
+    <div class="modal-box">
+      <h3>About MindGuard</h3>
+      <p>MindGuard uses a machine learning model trained on smartphone usage data to estimate your addiction risk and suggests habits to improve your digital wellbeing.</p>
+      <button class="btn btn-primary" id="closeModal">Got it</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

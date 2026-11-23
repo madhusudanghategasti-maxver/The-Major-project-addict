@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MindGuard - Addiction Prediction</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="predict">
+  <nav class="navbar">
+    <a href="home.html" class="logo"><span class="badge">🧠</span> MindGuard</a>
+    
+  </nav>
+
+  <main class="container">
+    <div class="page-title">
+      <h1><span class="gradient-text">📊 Addiction Prediction</span></h1>
+      <p>Enter your smartphone usage details to check your addiction risk.</p>
+    </div>
+
+    <div class="presets">
+      <button class="preset active" data-preset="student">🎓 College Student (Heavy)</button>
+      <button class="preset" data-preset="professional">💼 Mindful Professional</button>
+      <button class="preset" data-preset="gamer">🎮 Casual Gamer</button>
+      <button class="preset" data-preset="detox">🍃 Digital Detoxer</button>
+    </div>
+
+    <div class="predict-layout">
+      <section class="card">
+        <h3>Input Features</h3>
+        <p class="form-sub">Fill in the details below:</p>
+
+        <div class="form-grid">
+          <div class="field">
+            <label>Age <span class="val" id="ageVal">20</span></label>
+            <input type="range" id="age" min="10" max="70" value="20" />
+          </div>
+          <div class="field">
+            <label>Gender</label>
+            <select id="gender">
+              <option>Male</option>
+              <option>Female</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label>Daily Screen Time Hours <span class="val" id="screenVal">7.5</span></label>
+            <input type="range" id="screen" min="0" max="16" step="0.5" value="7.5" />
+          </div>
+          <div class="field">
+            <label>Social Media Hours <span class="val" id="socialVal">3.5</span></label>
+            <input type="range" id="social" min="0" max="12" step="0.5" value="3.5" />
+          </div>
+
+          <div class="field">
+            <label>Gaming Hours <span class="val" id="gamingVal">1.5</span></label>
+            <input type="range" id="gaming" min="0" max="10" step="0.5" value="1.5" />
+          </div>
+          <div class="field">
+            <label>Work / Study Hours <span class="val" id="workVal">4</span></label>
+            <input type="range" id="work" min="0" max="14" step="0.5" value="4" />
+          </div>
+
+          <div class="field">
+            <label>Notifications Per Day <span class="val" id="notificationsVal">120</span></label>
+            <input type="range" id="notifications" min="0" max="300" value="120" />
+          </div>
+          <div class="field">
+            <label>Sleep Hours <span class="val" id="sleepVal">6.5</span></label>
+            <input type="range" id="sleep" min="3" max="12" step="0.5" value="6.5" />
+          </div>
+
+          <div class="field">
+            <label>Stress Level</label>
+            <select id="stress">
+              <option>Low</option>
+              <option selected>Moderate</option>
+              <option>High</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>App Opens Per Day <span class="val" id="opensVal">85</span></label>
+            <input type="range" id="opens" min="0" max="250" value="85" />
+          </div>
+
+          <div class="field">
+            <label>Academic / Work Impact</label>
+            <select id="impact">
+              <option>Low</option>
+              <option selected>Moderate</option>
+              <option>High</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Weekend Screen Time <span class="val" id="weekendVal">9</span></label>
+            <input type="range" id="weekend" min="0" max="18" step="0.5" value="9" />
+          </div>
+        </div>
+      </section>
+
+      <aside class="card insight-card">
+        <h3>Prediction Insight</h3>
+        <div class="big">🔍📊</div>
+        <p>Discover your addiction risk with just a few clicks.</p>
+      </aside>
+    </div>
+
+    <div class="predict-action">
+      <button class="btn btn-primary btn-block" id="predictBtn">✨ Predict Addiction →</button>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

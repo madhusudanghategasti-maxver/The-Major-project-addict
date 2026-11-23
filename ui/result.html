@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MindGuard - Prediction Result</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="result">
+  <nav class="navbar">
+    <a href="home.html" class="logo"><span class="badge">🧠</span> MindGuard</a>
+    
+  </nav>
+
+  <main class="container">
+    <div class="result-head">
+      <h1><span class="ok">✅</span> Your Prediction Result</h1>
+      <p>Based on your input data, here's your addiction risk analysis.</p>
+    </div>
+
+    <div class="result-grid">
+      <section class="card gauge-card">
+        <div class="gauge" id="gauge">
+          <div class="gauge-inner" id="riskText">Moderate<br />Risk</div>
+        </div>
+        <span class="level-pill" id="levelPill">Addiction Level: Moderate</span>
+      </section>
+
+      <section class="card label-card">
+        <h3>👥 Addicted Label</h3>
+        <div class="num" id="labelNum">1</div>
+        <span class="sub" id="labelText">(Addicted)</span>
+        <p class="confidence" id="confidence"></p>
+      </section>
+    </div>
+
+    <div class="insight-row">
+      <section class="card">
+        <h3>Key Insights</h3>
+        <ul class="check-list" id="insights"></ul>
+      </section>
+      <section class="card">
+        <h3>💡 Recommended Actions</h3>
+        <ul class="check-list" id="actions"></ul>
+      </section>
+    </div>
+
+    <div class="predict-action">
+      <a href="home.html" class="btn btn-primary btn-block">🏠 Back to Home</a>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
